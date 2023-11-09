@@ -1,0 +1,31 @@
+// Tram Code zur Berechnung des ggt(x,y)
+// In den ersten beiden Schritten pushen wir x und y auf den Stack
+CONST 0
+CONST 27
+RE: NOP
+INVOKE 2 ST 0
+HALT
+ST: LOAD 1 0
+IFZERO RA
+LOAD 0 0
+IFZERO RB
+LOAD 0 0
+LOAD 1 0
+GT
+IFZERO C2
+LOAD 0 0
+LOAD 1 0
+SUB
+LOAD 1 0
+INVOKE 2 ST 0
+RETURN
+C2: LOAD 0 0
+LOAD 1 0
+LOAD 0 0
+SUB
+INVOKE 2 ST 0
+RETURN
+RA: LOAD 0 0
+RETURN
+RB: LOAD 1 0
+RETURN
