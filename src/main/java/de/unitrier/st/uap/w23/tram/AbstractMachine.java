@@ -4,6 +4,7 @@ import java.util.Arrays;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.Scanner;
+import org.apache.logging.log4j.core.LoggerContext;
 
 public class AbstractMachine {
 
@@ -12,8 +13,9 @@ public class AbstractMachine {
     private Instruction[] program;
 
     private String logSettings;
-    private static final Logger consoleLogger = LogManager.getLogger("consoleLogger");
-    private static final Logger fileLogger = LogManager.getLogger("fileLogger");
+    private final LoggerContext ctx = (LoggerContext) LogManager.getContext(LogManager.class.getClassLoader(), false);
+    private final Logger consoleLogger = ctx.getLogger("consoleLogger");
+    private final Logger fileLogger = ctx.getLogger("fileLogger");
 
     private final int STACK_MIN_SIZE = 10;
 
