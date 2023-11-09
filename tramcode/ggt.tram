@@ -1,6 +1,6 @@
 // Tram Code zur Berechnung des ggt(x,y)
 // In den ersten beiden Schritten pushen wir x und y auf den Stack
-CONST 0
+CONST 6
 CONST 27
 RE: NOP
 INVOKE 2 ST 0
